@@ -1,73 +1,50 @@
 import "./index.css";
 
+import { useState } from "react";
+
 import AppHeader from './components/AppHeader';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
 import Add_Button from './components/Add_Button'; 
-import Book from './components/book';
-
-
-import books from './data/books.json';
+import Book from './components/Book';   // capitalized file name
 import Modal from './components/Modal';
 import BookForm from "./components/Book_Form";  
 
-
-  
-function renderBooks(book) {
-  return <Book key={book.isbn13} {...book} />;
-}
-
+import initialBooks from './data/books.json';  // rename import to avoid clash with state
 
 function App() {
+  // State to hold the books (so we can remove them)
+  const [books, setBooks] = useState(initialBooks);
+
+  // Handler to remove a book by id
+  const handleRemove = (isbn13) => {
+    setBooks(books.filter((book) => book.isbn13 !== isbn13));
+  };
+
   return (
     <div className="app"> 
       <section id="root">
         <AppHeader />
-       <Main className="content">
+        <Main className="content">
           <Modal btnLabel="New" btnClassName="btn_primary">
-              <BookForm />
+            <BookForm />
           </Modal>
-        <div className="book_group">
-          {books.map(renderBooks)}
-        </div>
 
-
-      </Main>
+          <div className="book_group">
+            {books.map((book) => (
+              <Book 
+                key={book.isbn13} 
+                {...book} 
+                onRemove={handleRemove}  // pass remove handler
+              />
+            ))}
+          </div>
+        </Main>
       </section>
-    <Footer />
+      <Footer />
     </div>
   )
 }
 
-function Tile({ label }) {
-    function remove(e) {
-        if (e.target === e.currentTarget) {
-            return;
-        }
-        if (e.target.tagName !== "SPAN") {
-            return;
-        }
-        e.currentTarget.remove();
-    }
-
-    return (
-        <div
-            className="tile"
-            onClick={remove}
-        >
-            <p>{label}</p>
-            <span>x</span>
-        </div>
-    );
-}
-
-
-
-
-
 export default App;
-
-
-
-

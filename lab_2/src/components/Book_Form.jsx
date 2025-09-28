@@ -1,9 +1,10 @@
-import "../index.css";
+import "./Book_Form.css";
+
 
 function BookForm() {
     return (
         <div className="form-container">
-            <h2>New Book</h2>
+            <h2>Add Book</h2>
             <form>
                 <div className="form-control">
                     <label>Title</label>
@@ -45,7 +46,7 @@ function BookForm() {
                     <label>Pages</label>
                     <input name="pr-price" type="number" />
                 </div>
-                <button className="btn primary">Save</button>
+                <button className="save_button">Save</button>
             </form>
         </div>
     );

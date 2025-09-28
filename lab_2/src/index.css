@@ -1,7 +1,6 @@
 
 *{
     box-sizing: border-box;
-    
 }
 
 /* Reset page */
@@ -15,6 +14,7 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
 }
+
 
 
 
@@ -55,66 +55,21 @@ display: grid
 
     
 footer {
-  text-align: center;
+  align-self: flex-end;
   background: #E7C0BC;
   color: #fff;
   padding: 1em;
-  flex-shrink: 0; /* prevents footer from collapsing */
+  width: 100%;
+  display: fixed;
+
 }
 
-
-button, 
-input[type="text"],
-input[type="search"],
-input[type="number"],
-input[type="password"] {
-  appearance: none;
-  background: transparent;
-  border: none;
-  font: inherit;
-  padding: 0;
-  width: auto;
-}
-
-input[type="text"],
-input[type="search"],
-input[type="number"],
-input[type="password"] {
-  padding: 0.5em 1em;
-  border: 1px solid;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-
-
-
-
-
-.btn_primary {
-  font-family:'Times New Roman', Times, serif;
-  font-size: 32px;
-  font-weight: bolder;
-  color: lightslategrey;
-
-     position: relative;
-    width: 200px;
-    height: 300px;
-    background: #fff;
-    cursor: pointer;
-    border: 5px solid #ccc;
-    border-radius: 10px;
-    margin-left: 1em;
-}
-
-
-
-
-.add_button:hover{
-  background: lightslategrey;
-  transition: .2s;
-  color: white;
-
+footer p {
+    display: block;
+    text-align: center;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
 }

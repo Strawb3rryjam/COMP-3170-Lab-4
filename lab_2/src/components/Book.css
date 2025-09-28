@@ -47,3 +47,14 @@
   background-color: white;
   color: #3a4660;
 }
+
+
+.remove-btn {
+     position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5em;
+    background: #b2395b;
+    color: #fff;
+    cursor: pointer;
+}
