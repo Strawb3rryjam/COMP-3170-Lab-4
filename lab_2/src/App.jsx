@@ -7,7 +7,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 
 import Add_Button from './components/Add_Button'; 
-import Book from './components/Book';   // capitalized file name
+import Book from './components/Books';   // capitalized file name
 import Modal from './components/Modal';
 import BookForm from "./components/Book_Form";  
 
