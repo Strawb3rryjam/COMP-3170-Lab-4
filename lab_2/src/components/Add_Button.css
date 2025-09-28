@@ -1,0 +1,27 @@
+
+
+.add_button {
+  font-family:'Times New Roman', Times, serif;
+  font-size: 32px;
+  font-weight: bolder;
+  color: lightslategrey;
+
+     position: relative;
+    width: 200px;
+    height: 300px;
+    background: #fff;
+    cursor: pointer;
+    border: 5px solid #ccc;
+    border-radius: 10px;
+    margin-left: 1em;
+}
+
+
+
+
+.add_button:hover{
+  background: lightslategrey;
+  transition: .2s;
+  color: white;
+
+}

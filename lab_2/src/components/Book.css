@@ -1,0 +1,49 @@
+
+.book {
+  width: 200px;
+  height: 300px;
+  padding: .4rem;
+  border: 1px solid #3a4660;
+  position: relative;
+}
+
+.book img {
+  width:185px;
+  height: 216px;
+}
+
+.book_subtitle{
+  font-size: 16px;
+}
+
+.book_desc{
+  font-weight:bolder;
+}
+
+.book p {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: #3a4660;
+}
+
+.book a {
+  display:block;
+  height: 2rem;
+  width:100%;
+  background: #3a4660;
+  position: absolute;
+  bottom:0;
+  left: 0;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: .25rem;
+  
+}
+
+.book a:hover {
+  background-color: white;
+  color: #3a4660;
+}
