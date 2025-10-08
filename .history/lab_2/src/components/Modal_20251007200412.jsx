@@ -13,8 +13,8 @@ function Modal({ btnLabel, btnClassName, children }) {
                 {btnLabel}
             </button>
             <dialog ref={modalRef}>{children}</dialog>
-            
-  
+            <p>EDIT</p>
+            <p>DELETE</p>
         </>
     );
 }

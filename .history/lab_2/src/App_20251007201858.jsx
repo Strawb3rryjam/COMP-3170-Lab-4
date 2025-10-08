@@ -30,12 +30,16 @@ function App() {
         <Main className="content">
 
           <div>
-            <Modal btnLabel="New" btnClassName="btn_primary">
+              <Modal btnLabel="New" btnClassName="btn_primary">
             <BookForm />
-            </Modal>
+          </Modal>
+
             <ActionButton />
+    
           </div>
         
+
+
           <div className="book_group">
             {books.map((book) => (
               <Book 

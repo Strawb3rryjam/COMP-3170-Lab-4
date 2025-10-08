@@ -9,10 +9,8 @@ import Footer from './components/Footer';
 import Book from './components/Books';   // capitalized file name
 import Modal from './components/Modal';
 import BookForm from "./components/Book_Form";  
-import ActionButton from "./components/Action_Button";  
 
 import initialBooks from './data/books.json';  // rename import to avoid clash with state
-
 
 function App() {
   // State to hold the books (so we can remove them)
@@ -28,14 +26,10 @@ function App() {
       <section id="root">
         <AppHeader />
         <Main className="content">
-
-          <div>
-            <Modal btnLabel="New" btnClassName="btn_primary">
+          <Modal btnLabel="New" btnClassName="btn_primary">
             <BookForm />
-            </Modal>
-            <ActionButton />
-          </div>
-        
+          </Modal>
+
           <div className="book_group">
             {books.map((book) => (
               <Book 

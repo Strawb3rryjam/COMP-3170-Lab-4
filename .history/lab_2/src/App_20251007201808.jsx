@@ -28,14 +28,15 @@ function App() {
       <section id="root">
         <AppHeader />
         <Main className="content">
+          <Modal btnLabel="New" btnClassName="btn_primary">
+            <BookForm />
+          </Modal>
 
           <div>
-            <Modal btnLabel="New" btnClassName="btn_primary">
-            <BookForm />
-            </Modal>
             <ActionButton />
           </div>
-        
+
+
           <div className="book_group">
             {books.map((book) => (
               <Book 
