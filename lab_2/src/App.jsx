@@ -42,7 +42,7 @@ function App() {
           <div className="actions">
             <BookModal onAddBook={handleAddBook} />
             <button className="btn secondary" onClick={handleUpdateBook}>
-              Update
+              Edit
             </button>
             <button className="btn danger" onClick={handleDeleteBook}>
               Delete
