@@ -51,7 +51,7 @@ function App() {
 
           <div className="book_group">
             {books.length === 0 ? (
-              <p className="no-books">No books yet — add one!</p>
+              <p className="no-books"></p>
             ) : (
               books.map((book, index) => (
                 <div
