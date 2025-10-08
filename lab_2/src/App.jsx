@@ -1,55 +1,85 @@
 import "./index.css";
-
 import { useState } from "react";
 
 import AppHeader from './components/AppHeader';
 import Main from './components/Main';
 import Footer from './components/Footer';
-
-import Book from './components/Books';   // capitalized file name
-import Modal from './components/Modal';
-import BookForm from "./components/Book_Form";  
-import ActionButton from "./components/Action_Button";  
-
-import initialBooks from './data/books.json';  // rename import to avoid clash with state
-
+import BookModal from './components/BookModal';
 
 function App() {
-  // State to hold the books (so we can remove them)
-  const [books, setBooks] = useState(initialBooks);
+  const [books, setBooks] = useState([]);
 
-  // Handler to remove a book by id
-  const handleRemove = (isbn13) => {
-    setBooks(books.filter((book) => book.isbn13 !== isbn13));
+  // Add book with selected: false
+  const handleAddBook = (newBook) => {
+    setBooks([...books, { ...newBook, selected: false }]);
+  };
+
+  //  Select only one book at a time
+  const handleSelectBook = (index) => {
+    setBooks((prevBooks) =>
+      prevBooks.map((book, i) => ({
+        ...book,
+        selected: i === index ? !book.selected : false,
+      }))
+    );
+  };
+
+  //  Delete selected book
+  const handleDeleteBook = () => {
+    setBooks(books.filter((book) => !book.selected));
+  };
+
+  //  Placeholder update function
+  const handleUpdateBook = () => {
+    console.log("Update button clicked (no-op for now)");
   };
 
   return (
-    <div className="app"> 
+    <div className="app">
       <section id="root">
         <AppHeader />
         <Main className="content">
-
-          <div>
-            <Modal btnLabel="New" btnClassName="btn_primary">
-            <BookForm />
-            </Modal>
-            <ActionButton />
+          <div className="actions">
+            <BookModal onAddBook={handleAddBook} />
+            <button className="btn secondary" onClick={handleUpdateBook}>
+              Update
+            </button>
+            <button className="btn danger" onClick={handleDeleteBook}>
+              Delete
+            </button>
           </div>
-        
+
           <div className="book_group">
-            {books.map((book) => (
-              <Book 
-                key={book.isbn13} 
-                {...book} 
-                onRemove={handleRemove}  // pass remove handler
-              />
-            ))}
+            {books.length === 0 ? (
+              <p className="no-books">No books yet — add one!</p>
+            ) : (
+              books.map((book, index) => (
+                <div
+                  key={index}
+                  className={`book-card ${book.selected ? "selected" : ""}`}
+                  onClick={() => handleSelectBook(index)}
+                >
+                  {book.image ? (
+                    <img
+                      src={book.image}
+                      alt={book.title}
+                      className="book-image"
+                    />
+                  ) : (
+                    <div className="book-image placeholder">📘</div>
+                  )}
+
+                  <p><strong>{book.title}</strong></p>
+                  <p>by {book.author}</p>
+                </div>
+              ))
+            )}
           </div>
         </Main>
+        <Footer />
       </section>
-      <Footer />
     </div>
-  )
+  );
 }
 
 export default App;

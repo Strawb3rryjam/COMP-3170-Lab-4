@@ -1,18 +1,24 @@
 
 *{
     box-sizing: border-box;
+    font-family: poppins, sans-serif;
 }
 
 /* Reset page */
+
 html, body {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
+
+
 
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+      background-color: #fef4f0;
+
 }
 
 
@@ -21,27 +27,44 @@ html, body {
 .content {
  display: grid;
   grid-template-columns: 200px auto;
+      padding: 0 1em;
   
 }
 
 #root {
-display: grid
-;
+    display: grid;
     grid-template-rows: auto 1fr auto;
+    gap: 1em;
     min-height: inherit;
+    
 }
 
 
 /* Header */
 .app_header {
-  margin-top:0;
+    padding: 1em;
+    color: #e34a35;
+    background: #f8b3b8;
+    border-bottom: 3px solid #e34a35;
+  
+  /* margin-top:0;
   padding: 1em;
   border-bottom: 5px solid #8B3C46;
   background-color: #E7C0BC;
   text-align: center;
-  color: #8B3C46;
+  color: #8B3C46; */
 }
 
+.app_header h1 {
+       display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
+}
 
 
 
@@ -54,22 +77,101 @@ display: grid
 }
 
     
-footer {
-  align-self: flex-end;
-  background: #E7C0BC;
-  color: #fff;
-  padding: 1em;
-  width: 100%;
-  display: fixed;
-
-}
-
-footer p {
+.app_footer {
+     align-self: flex-end;
+    color: #e34a35;
+    background: #f8b3b8;
+    padding: 1em;
     display: block;
-    text-align: center;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
     unicode-bidi: isolate;
+
 }
+
+.app_footer p {
+      text-align: center;
+}
+
+
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: .5em 1.5em;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+.secondary{
+    background: #f1c4a5;
+    color: #fff;
+    font-size: 16px;
+}
+
+.danger{
+  background: #e34a35;
+    color: #fff;
+}
+
+
+/*Book card*/
+.book_group {
+     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 2em;
+}
+
+/* Base card */
+.book-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  width: 180px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+/* Shared image + placeholder area */
+.book-image {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Placeholder looks like image but with icon */
+.book-image.placeholder {
+  font-size: 60px;
+  color: #bbb;
+}
+
+/* Hover + selected styles */
+.book-card:hover {
+  transform: translateY(-3px);
+  border: 3px solid #a8a8a8;
+}
+
+.book-card.selected {
+  background: #f7ddce;
+  border: 3px solid #ff9800;
+  border-radius: 5px;
+}
+
+.no-books {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  width: 100%;
+}
+

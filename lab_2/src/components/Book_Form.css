@@ -17,13 +17,27 @@ input[type="search"],
 input[type="number"],
 input[type="password"] {
   padding: 0.5em 1em;
-  border: 1px solid;
+  border: 1px solid #e34A35;
+  
 
   &:focus {
     outline: none;
   }
 }
 
+
+.book-modal{
+  background-color: #fef4f0;
+  border-radius: 20px;
+  border: 2px solid #e34A35;
+
+}
+
+.book-modal h2{
+    text-align: center;
+    color: #e34A35;
+    font-weight: bold;
+}
 
 
 .form-container{
@@ -35,7 +49,7 @@ input[type="password"] {
 }
 
 .form-container .form-control label {
-    display: inline-blocl;
+    display: inline-block;
     width: 10em;
 }
 
@@ -61,41 +75,31 @@ label{
     display: inline-block;
     padding: .5em 1.5em;
     text-transform: uppercase;
-    background: #2e8b57;
+    background: #e34A35;
     color: #fff;
      margin-left: 10em;
+     border-radius: 10px;
+     margin-right: 20px;
 }
-
 
 
 
 /* new buttom  */
-.btn_primary {
-  font-family:'Times New Roman', Times, serif;
-  font-size: 32px;
-  font-weight: bolder;
-  color: lightslategrey;
-
-     position: relative;
+.book-header {
+    font-size: 40px;
+    font-weight: 500;
+    font-weight: bold;
+    color: #e34A35;
     width: 200px;
     height: 300px;
-    background: #fff;
+    background: #fef4f0;
     cursor: pointer;
-    border: 5px solid #ccc;
+    border: 3px solid #e34A35;
     border-radius: 10px;
-    margin-left: 1em;
+    align-items: center;
+  justify-content: space-between; 
 }
 
-
-
-
-
-.add_button:hover{
-  background: lightslategrey;
-  transition: .2s;
-  color: white;
-
-}
 
 
 dialog::backdrop {
@@ -103,3 +107,38 @@ dialog::backdrop {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
+
+
+/*Book cards*/
+.book-card {
+  background: #fff;
+    position: relative;
+    width: 200px;
+    height: 300px;
+    padding: .4rem;
+    border: 1px solid #3a4660;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+}
+
+.book-image {
+width: 100%; 
+}
+
+.book-placeholder {
+position: relative;
+    width: 200px;
+    height: 300px;
+    padding: .4rem;
+    border: 1px solid #3a4660;
+}
+
+.no-books {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+}
+
+
